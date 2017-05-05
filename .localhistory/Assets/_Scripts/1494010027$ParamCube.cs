@@ -20,7 +20,7 @@ public class ParamCube : MonoBehaviour
         if (_useBuffer)
         {
             transform.localScale = new Vector3(transform.localScale.x,
-                (AudioPeer._bandBuffer[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
+                (AudioPeer._freqBand[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
         }
 
         if (!_useBuffer)

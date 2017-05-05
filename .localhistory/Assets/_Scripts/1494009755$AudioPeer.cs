@@ -22,31 +22,11 @@ public class AudioPeer : MonoBehaviour
 	{
 	    GetSpectrumAudioSource();
 	    MakeFrequencyBands();
-	    BandBuffer();
 	}
 
     void GetSpectrumAudioSource()
     {
         _audioSource.GetSpectrumData(_samples, 0, FFTWindow.Blackman);
-    }
-
-    void BandBuffer()
-    {
-        for (int g = 0; g < 8; ++g)
-        {
-            if (_freqBand[g] > _bandBuffer[g])
-            {
-                _bandBuffer[g] = _freqBand[g];
-                _bufferDecrease[g] = 0.005f;
-            }
-
-            if (_freqBand[g] < _bandBuffer[g])
-            {
-                _bandBuffer[g] -= _bufferDecrease[g];
-                _bufferDecrease[g] *= 1.2f;
-            }
-
-        }
     }
 
     void MakeFrequencyBands()
