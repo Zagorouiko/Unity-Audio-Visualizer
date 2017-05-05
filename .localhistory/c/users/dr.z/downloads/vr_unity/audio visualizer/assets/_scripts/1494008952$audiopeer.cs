@@ -19,7 +19,6 @@ public class AudioPeer : MonoBehaviour
 	void Update ()
 	{
 	    GetSpectrumAudioSource();
-	    MakeFrequencyBands();
 	}
 
     void GetSpectrumAudioSource()
@@ -33,8 +32,6 @@ public class AudioPeer : MonoBehaviour
 
         for (int i = 0; i < 8; i++)
         {
-
-            float average = 0;
             int sampleCount = (int) Mathf.Pow(2, i) * 2;
 
             if (i == 7)

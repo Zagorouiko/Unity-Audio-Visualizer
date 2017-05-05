@@ -19,7 +19,6 @@ public class AudioPeer : MonoBehaviour
 	void Update ()
 	{
 	    GetSpectrumAudioSource();
-	    MakeFrequencyBands();
 	}
 
     void GetSpectrumAudioSource()
